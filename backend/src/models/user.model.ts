@@ -66,8 +66,8 @@ User.methods.omitPassword = function(): Omit<UserDocument, "password">{
     return userObj;
 }
 
-User.methods.comparePassword = function(value: string) {
-     comparePass(value, this.password)
+User.methods.comparePassword = async function(value: string) {
+     return comparePass(value, this.password)
 } 
 
 const UserModel = mongoose.model<UserDocument>("User", User)
