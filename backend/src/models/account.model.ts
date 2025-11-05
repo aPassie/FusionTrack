@@ -39,7 +39,7 @@ const Account = new mongoose.Schema<AccountDocument>({
     timestamps: true,
     toJSON: {
         transform(doc, ret){
-            delete ret.refreshToken;
+            delete (ret as any).refreshToken;
         }
     }
 });

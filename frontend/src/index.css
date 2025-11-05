@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* FusionTrack Design System */
+
+@layer base {
+  :root {
+    /* Light mode colors - Professional B2B palette */
+    --background: 120 15% 97%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    /* Primary: Vibrant Purple */
+    --primary: 277 65% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 277 65% 38%;
+
+    /* Secondary: Calm Teal */
+    --secondary: 183 60% 55%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-hover: 183 60% 48%;
+
+    /* Accent: Warm Yellow/Gold */
+    --accent: 70 85% 65%;
+    --accent-foreground: 0 0% 0%;
+    --accent-hover: 70 85% 58%;
+
+    /* Muted grays */
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 35%;
+
+    /* Destructive: Coral Red */
+    --destructive: 25 80% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders and inputs */
+    --border: 0 0% 0%;
+    --input: 0 0% 50%;
+    --ring: 274 55% 70%;
+
+    /* Radius */
+    --radius: 1rem;
+
+    /* Sidebar */
+    --sidebar-background: 120 15% 97%;
+    --sidebar-foreground: 0 0% 0%;
+    --sidebar-primary: 277 65% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 70 85% 65%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 0 0% 0%;
+    --sidebar-ring: 274 55% 70%;
+
+    /* Custom shadows */
+    --shadow-sm: 0 1px 2px -1px hsl(0 0% 10% / 0.05);
+    --shadow-md: 0 2px 4px -1px hsl(0 0% 10% / 0.05);
+    --shadow-lg: 0 4px 6px -1px hsl(0 0% 10% / 0.05);
+    --shadow-xl: 0 8px 10px -1px hsl(0 0% 10% / 0.05);
+
+    /* Transitions */
+    --transition-base: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 257 20% 15%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 257 20% 15%;
+    --popover-foreground: 0 0% 100%;
+
+    /* Primary: Lighter Purple for dark mode */
+    --primary: 277 55% 60%;
+    --primary-foreground: 0 0% 0%;
+    --primary-hover: 277 55% 68%;
+
+    /* Secondary: Lighter Teal */
+    --secondary: 182 58% 68%;
+    --secondary-foreground: 0 0% 0%;
+    --secondary-hover: 182 58% 75%;
+
+    /* Accent: Lighter Yellow */
+    --accent: 92 75% 78%;
+    --accent-foreground: 0 0% 0%;
+    --accent-hover: 92 75% 85%;
+
+    --muted: 0 0% 25%;
+    --muted-foreground: 0 0% 75%;
+
+    --destructive: 22 75% 65%;
+    --destructive-foreground: 0 0% 0%;
+
+    --border: 0 0% 35%;
+    --input: 0 0% 100%;
+    --ring: 277 55% 60%;
+
+    --sidebar-background: 0 0% 0%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 277 55% 60%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 92 75% 78%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 0 0% 100%;
+    --sidebar-ring: 277 55% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
