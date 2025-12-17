@@ -1,5 +1,5 @@
 import "dotenv/config";
-import express , {Response}  from "express";
+import express, { Response } from "express";
 import cors from "cors";
 import session from "cookie-session";
 import { config } from "./config/app.config";
@@ -31,8 +31,8 @@ app.use(
     session({
         name: "session",
         keys: [config.SESSION_SECRET],
-        maxAge : 24*60*60*1000,
-        secure: config.NODE_ENV==="production",
+        maxAge: 24 * 60 * 60 * 1000,
+        secure: config.NODE_ENV === "production",
         httpOnly: true,
         sameSite: "lax"
     })
@@ -51,17 +51,17 @@ app.use(
 app.get(
     `/`,
     asyncHandler(async (req, res, next) => {
-      throw new BadRequestException(
-        "This is a bad request",
-        ErrorCodeEnum.AUTH_INVALID_TOKEN
-      );  
-    res.status(HTTPSTATUS.OK).json({
-        message: "Hello to my second project"
-    })
-}))
+        throw new BadRequestException(
+            "This is a bad request",
+            ErrorCodeEnum.AUTH_INVALID_TOKEN
+        );
+        res.status(HTTPSTATUS.OK).json({
+            message: "Welcome to FusionTrack API"
+        })
+    }))
 
 app.use(`${BASE_PATH}/auth`, authRoutes);
-app.use(`${BASE_PATH}/user`, isAuthenticated,  userRoutes);
+app.use(`${BASE_PATH}/user`, isAuthenticated, userRoutes);
 app.use(`${BASE_PATH}/workspace`, isAuthenticated, workspaceRoutes);
 app.use(`${BASE_PATH}/member`, isAuthenticated, memberRoutes)
 app.use(`${BASE_PATH}/project`, isAuthenticated, projectRoutes)
@@ -69,7 +69,7 @@ app.use(`${BASE_PATH}/task`, isAuthenticated, taskRoutes)
 
 app.use(errorHandler)
 
-app.listen(config.PORT, async()=>{
+app.listen(config.PORT, async () => {
     console.log(`Server listening on port ${config.PORT} in ${config.NODE_ENV}`)
     await connectDatabase()
 })

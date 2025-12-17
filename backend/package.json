@@ -1,7 +1,7 @@
 {
-  "name": "backend",
+  "name": "fusiontrack-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "FusionTrack - B2B Project Management Platform API",
   "main": "index.js",
   "scripts": {
     "seed": "ts-node src/seeders/role.seeder.ts",
@@ -10,7 +10,7 @@
     "start": "node dist/index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Parth Sankhla",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
